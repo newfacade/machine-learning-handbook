@@ -1,0 +1,48 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: chapter1/0
+  sections:
+  - file: chapter1/1.linear regression
+  - file: chapter1/2.linear regression variants
+  - file: chapter1/3.logistic regression
+
+- file: chapter2/0
+  sections:
+  - file: chapter2/1.linear svm
+  - file: chapter2/2.kernel svm
+
+- file: chapter3/0
+  sections:
+  - file: chapter3/1.decision tree
+  - file: chapter3/2.random forest
+  - file: chapter3/3.adaboost
+  - file: chapter3/4.GBDT
+  - file: chapter3/5.xgboost
+  - file: chapter3/6.lightgbm
+
+- file: chapter4/0
+  sections:
+  - file: chapter4/1.knn
+  - file: chapter4/2.naive bayes
+  - file: chapter4/3.neural network
+
+- file: chapter5/0
+  sections:
+  - file: chapter5/1.PCA
+  - file: chapter5/2.LLE
+
+- file: chapter6/0
+  sections:
+  - file: chapter6/1.k-means
+  - file: chapter6/2.dbscan
+
+- file: chapter7/0
+  sections:
+  - file: chapter7/1.GMM
+  - file: chapter7/2.EM
+  - file: chapter7/3.bayesian GMM
+
