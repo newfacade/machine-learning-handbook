@@ -74,7 +74,7 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
-      <img src="../_static/10.jpg" class="logo" alt="logo">
+      <img src="../_static/10.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">机器学习手册</h1>
@@ -275,11 +275,6 @@
      EM
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter7/3.bayesian GMM.html">
-     Bayesian Gaussian Mixture
-    </a>
-   </li>
   </ul>
  </li>
 </ul>
@@ -444,7 +439,7 @@ For multi-class classification problem, we can use softmax regression.</p>
 <p>For binary classification problem where <span class="math notranslate nohighlight">\(x \in \mathbb{R}^{d}\)</span>, <span class="math notranslate nohighlight">\(y \in \left\{0, 1\right\}\)</span>, we could approach the classification problem using linear regression ignoring the fact that <span class="math notranslate nohighlight">\(y\)</span> is discrete. Howerver, it is easy to construct examples that performs poorly, it doesn’t make sense for <span class="math notranslate nohighlight">\(h(x)\)</span> outside <span class="math notranslate nohighlight">\(\left[0, 1\right]\)</span>.</p>
 <p>To fix this, we used the logistic function(sigmoid) to force the result in <span class="math notranslate nohighlight">\(\left[0, 1\right]\)</span> after the affine transformation:</p>
 <div class="math notranslate nohighlight">
-\[h(x) = \frac{1}{1 + \mbox{exp}(\theta^{T}x)} = \sigma(\theta^{T}x)\]</div>
+\[h(x) = \frac{1}{1 + \mbox{exp}(-\theta^{T}x)} = \sigma(\theta^{T}x)\]</div>
 </div>
 <div class="section" id="entropy">
 <h2>Entropy<a class="headerlink" href="#entropy" title="Permalink to this headline">¶</a></h2>
