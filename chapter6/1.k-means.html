@@ -4,11 +4,12 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K-Means &#8212; 机器学习手册</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>K-means &#8212; 机器学习手册</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,49 +19,65 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="shortcut icon" href="../_static/github.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="DBSCAN" href="2.dbscan.html" />
     <link rel="prev" title="聚类" href="0.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -69,10 +86,15 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
       
       <img src="../_static/10.png" class="logo" alt="logo">
       
@@ -83,16 +105,17 @@
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   前言
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter1/0.html">
    线性模型
@@ -104,17 +127,17 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter1/1.linear regression.html">
+    <a class="reference internal" href="../chapter1/1.linear%20regression.html">
      Linear Regression
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter1/2.linear regression variants.html">
+    <a class="reference internal" href="../chapter1/2.linear%20regression%20variants.html">
      Linear Regression Variants
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter1/3.logistic regression.html">
+    <a class="reference internal" href="../chapter1/3.logistic%20regression.html">
      Logistic Regression
     </a>
    </li>
@@ -131,12 +154,12 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter2/1.linear svm.html">
+    <a class="reference internal" href="../chapter2/1.linear%20svm.html">
      Linear SVM
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter2/2.kernel svm.html">
+    <a class="reference internal" href="../chapter2/2.kernel%20svm.html">
      Kernel SVM
     </a>
    </li>
@@ -153,12 +176,12 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter3/1.decision tree.html">
+    <a class="reference internal" href="../chapter3/1.decision%20tree.html">
      Decision Tree
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter3/2.random forest.html">
+    <a class="reference internal" href="../chapter3/2.random%20forest.html">
      Random Forest
     </a>
    </li>
@@ -200,12 +223,12 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter4/2.naive bayes.html">
+    <a class="reference internal" href="../chapter4/2.naive%20bayes.html">
      Naive Bayes
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter4/3.neural network.html">
+    <a class="reference internal" href="../chapter4/3.neural%20network.html">
      Neural Network
     </a>
    </li>
@@ -245,12 +268,22 @@
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     K-Means
+     K-means
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="2.dbscan.html">
      DBSCAN
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3.applications.html">
+     Using Clustering for Preprocess
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4.affinity.html">
+     Affinity Propagation
     </a>
    </li>
   </ul>
@@ -280,125 +313,237 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter6/1.k-means.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter6/1.k-means.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/chapter6/1.k-means.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/chapter6/1.k-means.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter6/1.k-means.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/chapter6/1.k-means.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#algorithm">
-   Algorithm
+  <a class="reference internal nav-link" href="#id1">
+   K-means 算法
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#convergence">
-   Convergence
+  <a class="reference internal nav-link" href="#id2">
+   K-means 算法的收敛性
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#examples">
-   Examples
+  <a class="reference internal nav-link" href="#id3">
+   使用方法
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#selecting-the-number-of-clusters">
-   Selecting the Number of Clusters
+  <a class="reference internal nav-link" href="#id4">
+   如何确定簇的个数
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-unintuitive-or-unexpected-clusters">
+   Some unintuitive or unexpected clusters
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   K-means++
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -408,46 +553,99 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>K-means</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   K-means 算法
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   K-means 算法的收敛性
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   使用方法
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   如何确定簇的个数
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-unintuitive-or-unexpected-clusters">
+   Some unintuitive or unexpected clusters
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   K-means++
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#minibatch-k-means">
+   Minibatch K-Means
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="k-means">
-<h1>K-Means<a class="headerlink" href="#k-means" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="k-means">
+<h1>K-means<a class="headerlink" href="#k-means" title="Permalink to this headline">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>K-Means iterative update cluster centroids and instances label.<br/>
-K-Means is convergent.<br/>
-We can use inertia to select the number of clusters.<br/>
-We can use mini-batch K-means to enable clustering huge datasets.</p>
+<p>K-means 是最常见的聚类算法，它需要预先指定 number of clusters，遇到聚类问题可以先用它试试。</p>
 </div>
-<div class="section" id="algorithm">
-<h2>Algorithm<a class="headerlink" href="#algorithm" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
-<li><p>The K-Means algorithm start by randomly choose k instances as k centroids.<br/></p></li>
-<li><p>Then label the instances by assigning each of them to the cluster whose centroid is closest.<br/></p></li>
-<li><p>Then update the centroids by computing the mean of the instances for each cluster.<br/></p></li>
-<li><p>Repeat the previous two steps until the centroids stops moving.</p></li>
-</ol>
-<a class="reference internal image-reference" href="../_images/kmeans.png"><img alt="kmeans" class="align-center" src="../_images/kmeans.png" style="width: 500px;" /></a>
+<div class="section" id="id1">
+<h2>K-means 算法<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>So, how does the algorithm work?</p>
+<p>Well, suppose you were given the centroids. You could easily label all the instances in the dataset by assigning each of them to the cluster <strong>whose centroid is closest</strong>.</p>
+<p>Conversly, if you were given all the instance labels, you could easily locate all the centroids by computing <strong>the mean of the instances for each cluster</strong>.</p>
+<p>But you are given neither the labels nor the centroids, so how can you proceed? Well, just start by placing the centroids randomly. Then label the instances, update the centroids, label the instances, update the centroids, and so on until the centroids stop moving.</p>
 </div>
-<div class="section" id="convergence">
-<h2>Convergence<a class="headerlink" href="#convergence" title="Permalink to this headline">¶</a></h2>
-<p>Define the distortion function:</p>
+<div class="section" id="id2">
+<h2>K-means 算法的收敛性<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<p>K-means 算法可以保证收敛。定义 distortion function：</p>
 <div class="math notranslate nohighlight">
-\[J(c, \mu) = \sum_{i=1}^{n}\left \| x^{(i)} - \mu_{c^{(i)}} \right \|^{2} \]</div>
-<p>K-Means is exactly coordinate descent on <span class="math notranslate nohighlight">\(J\)</span>.</p>
-<p>label instance step minimize <span class="math notranslate nohighlight">\(J(c, \mu)\)</span> while keeping the centroids fixed.</p>
-<p>update centroids step minimize <span class="math notranslate nohighlight">\(J(c, \mu)\)</span> while keeping the cluster fixed.</p>
-<p><span class="math notranslate nohighlight">\(J(c, \mu)\)</span> monotony decrease with lower bound, thus convergence.</p>
+\[J(c, \mu) = \sum_{i=0}^{n}\| x^{(i)} - \mu_{c^{(i)}}\|^{2} \]</div>
+<p>其中 <span class="math notranslate nohighlight">\(c^{(i)}\)</span> 是 <span class="math notranslate nohighlight">\(x^{(i)}\)</span> 所在的簇，<span class="math notranslate nohighlight">\(\mu_{c^{(i)}}\)</span> 是 <span class="math notranslate nohighlight">\(x^{(i)}\)</span> 所在簇的簇中心。</p>
+<p>K-Means is exactly coordinate descent on <span class="math notranslate nohighlight">\(J\)</span>:</p>
+<ul class="simple">
+<li><p>label instances 阶段固定簇中心，调整样本所在的簇最小化 <span class="math notranslate nohighlight">\(J(c, \mu)\)</span></p></li>
+<li><p>update centroids 阶段固定样本所在的簇，调整簇中心最小化 <span class="math notranslate nohighlight">\(J(c, \mu)\)</span></p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(J(c, \mu)\)</span> monotony decrease with lower bound, thus convergence. 事实上，只要某次 update centroids 阶段 <span class="math notranslate nohighlight">\(J(c, \mu)\)</span> 不下降，K-means 算法就收敛了。</p>
+<p>收敛后，<span class="math notranslate nohighlight">\(J(c, \mu)\)</span> 等于 K-means 算法的重要指标 inertia，which is the mean squared distance between each instance and its closest centroid:</p>
+<div class="math notranslate nohighlight">
+\[\sum_{i=0}^{n}\min_{\mu_{j}\in C}(\| x^{(i)} - \mu_{j}\|^{2})\]</div>
 </div>
-<div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h2>使用方法<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
@@ -455,7 +653,7 @@ We can use mini-batch K-means to enable clustering huge datasets.</p>
 
 <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
               <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
-<span class="c1"># k need to specified</span>
+<span class="c1"># 需要指定簇的个数</span>
 <span class="n">kmeans</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 <span class="n">kmeans</span><span class="o">.</span><span class="n">labels_</span>
 </pre></div>
@@ -494,12 +692,11 @@ We can use mini-batch K-means to enable clustering huge datasets.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># If you happen to kown approximately where the centroids should be,</span>
-<span class="c1"># set `good_init` to these centroids.</span>
-<span class="n">good_init</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
-
-<span class="c1"># n_init: The number of random initializations default 10.</span>
-<span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="n">good_init</span><span class="p">,</span> <span class="n">n_init</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># init: 如果你知道簇中心大概在哪，就手动设置之</span>
+<span class="c1"># n_init: Number of times the k-means algorithm will be run with different centroid seeds, choose by inertia.</span>
+<span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> 
+       <span class="n">init</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]),</span> 
+       <span class="n">n_init</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -509,21 +706,18 @@ We can use mini-batch K-means to enable clustering huge datasets.</p>
        [-3,  1],
        [-1,  2],
        [ 0,  2]]),
-       n_clusters=5, n_init=1)
+       n_clusters=5, n_init=3)
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="section" id="selecting-the-number-of-clusters">
-<h2>Selecting the Number of Clusters<a class="headerlink" href="#selecting-the-number-of-clusters" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h2>如何确定簇的个数<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<p>首先看 inertia，越小越好。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">sklearn uses inertia to choose from &#39;n_init&#39; models.</span>
-<span class="sd">which is the mean squared distance between each instance and its closest centroid.</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="c1"># select k that is the elbow</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># select k that is the elbow</span>
 <span class="n">kmeans</span><span class="o">.</span><span class="n">inertia_</span>
 </pre></div>
 </div>
@@ -534,11 +728,10 @@ We can use mini-batch K-means to enable clustering huge datasets.</p>
 </div>
 </div>
 </div>
-<p>Another more precise metric is called sihouette score, which is equal to:</p>
+<p>另一个指标是 sihouette score, which is equal to:</p>
 <div class="math notranslate nohighlight">
 \[\frac{b - a}{max(a, b)}\]</div>
-<p>where a is the mean distance to the other instances in the same cluster.</p>
-<p>b is the the mean distance to the instances of the next closest cluster, excluding the instance’s own cluster.</p>
+<p>其中 a 是同一簇中点的平均距离，b 是点到本簇外最近点的平均距离。它的取值范围是 <span class="math notranslate nohighlight">\((-1, 1)\)</span>，越大越好。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">silhouette_score</span>
@@ -555,8 +748,87 @@ We can use mini-batch K-means to enable clustering huge datasets.</p>
 </div>
 </div>
 </div>
+<div class="section" id="some-unintuitive-or-unexpected-clusters">
+<h2>Some unintuitive or unexpected clusters<a class="headerlink" href="#some-unintuitive-or-unexpected-clusters" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Author: Phil Roth &lt;mr.phil.roth@gmail.com&gt;</span>
+<span class="c1"># License: BSD 3 clause</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_blobs</span>
+
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;svg&#39;
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="n">n_samples</span> <span class="o">=</span> <span class="mi">1500</span>
+<span class="n">random_state</span> <span class="o">=</span> <span class="mi">170</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_blobs</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="n">n_samples</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">)</span>
+
+<span class="c1"># Incorrect number of clusters</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">)</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">221</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y_pred</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Incorrect Number of Blobs&quot;</span><span class="p">)</span>
+
+<span class="c1"># Anisotropicly distributed data</span>
+<span class="n">transformation</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.60834549</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.63667341</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.40887718</span><span class="p">,</span> <span class="mf">0.85253229</span><span class="p">]]</span>
+<span class="n">X_aniso</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">transformation</span><span class="p">)</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">)</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">X_aniso</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">222</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_aniso</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X_aniso</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y_pred</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Anisotropicly Distributed Blobs&quot;</span><span class="p">)</span>
+
+<span class="c1"># Different variance</span>
+<span class="n">X_varied</span><span class="p">,</span> <span class="n">y_varied</span> <span class="o">=</span> <span class="n">make_blobs</span><span class="p">(</span>
+    <span class="n">n_samples</span><span class="o">=</span><span class="n">n_samples</span><span class="p">,</span> <span class="n">cluster_std</span><span class="o">=</span><span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">],</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span>
+<span class="p">)</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">)</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">X_varied</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">223</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_varied</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X_varied</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y_pred</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Unequal Variance&quot;</span><span class="p">)</span>
+
+<span class="c1"># Unevenly sized blobs</span>
+<span class="n">X_filtered</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">X</span><span class="p">[</span><span class="n">y</span> <span class="o">==</span> <span class="mi">0</span><span class="p">][:</span><span class="mi">500</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="n">y</span> <span class="o">==</span> <span class="mi">1</span><span class="p">][:</span><span class="mi">100</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="n">y</span> <span class="o">==</span> <span class="mi">2</span><span class="p">][:</span><span class="mi">10</span><span class="p">]))</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">)</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">X_filtered</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">224</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_filtered</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X_filtered</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y_pred</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Unevenly Sized Blobs&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/1.k-means_13_0.svg" src="../_images/1.k-means_13_0.svg" /></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>K-means++<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<p>K-means 算法会收敛，但可能收敛到的是 local minimal，结果高度依赖于簇中心的初始化。</p>
+<p>One method to help address this issue is the k-means++ initiazation schema. This initiazes the <strong>centroids to be distant from each other</strong>, leading to probably better results than random initiazation.</p>
+<p>它先随机选取一个点作为初始的簇中心；当簇中心数量小于 k 时，计算每个点与当前已有的簇中心的最短距离，这个值越大，表示被选取为下一个簇中心的概率越大。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 设置 init=&#39;k-means++&#39;</span>
+<span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="s1">&#39;k-means++&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KMeans(n_clusters=3)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="minibatch-k-means">
-<h2>Minibatch K-Means<a class="headerlink" href="#minibatch-k-means" title="Permalink to this headline">¶</a></h2>
+<h2>Minibatch K-Means<a class="headerlink" href="#minibatch-k-means" title="Permalink to this headline">#</a></h2>
+<p>如果数据量大，其实每一步可以不用全部数据的，用 mini-batch 就很好了。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -602,34 +874,48 @@ We can use mini-batch K-means to enable clustering huge datasets.</p>
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
-            
-    <a class='left-prev' id="prev-link" href="0.html" title="previous page">聚类</a>
-    <a class='right-next' id="next-link" href="2.dbscan.html" title="next page">DBSCAN</a>
-
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="0.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">聚类</p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="2.dbscan.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">DBSCAN</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By newfacade<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By newfacade<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  
+
   </body>
 </html>
